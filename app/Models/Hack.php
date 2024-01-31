@@ -19,8 +19,7 @@ class Hack extends Model
         'id_github',
         'tanggal_lahir_ketua',
         'cv',
-        'flazz_binus',
-        'id_kartu_non_binus'
+        'id_card'
     ];
 
 }

@@ -22,8 +22,7 @@ return new class extends Migration
             $table->string('id_github');
             $table->date('tanggal_lahir_ketua');
             $table->string('cv');
-            $table->string('flazz_binus');
-            $table->string('id_kartu_non_binus');
+            $table->string('id_card');
             $table->timestamps();
         });
     }
