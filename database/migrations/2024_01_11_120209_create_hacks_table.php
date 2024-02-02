@@ -13,12 +13,10 @@ return new class extends Migration
     {
         Schema::create('hacks', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_grup');
-            $table->string('password');
             $table->string('nama_ketua');
             $table->string('email');
             $table->string('nomor_whatsapp');
-            $table->string('id_line');
+            $table->string('id_line')->unique();
             $table->string('id_github');
             $table->date('tanggal_lahir_ketua');
             $table->string('cv');

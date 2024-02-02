@@ -10,8 +10,6 @@ class Hack extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nama_grup',
-        'password',
         'nama_ketua',
         'email',
         'nomor_whatsapp',
