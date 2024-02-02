@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\MailController;
+use App\Http\Controllers\HackController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,11 +16,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/homepage', [HackController::class, 'homepage'])->name('homepage');
+
+Route::get('/', [HackController::class, 'homepage'])->name('homepage');
+
+Route::get('/adminPanel', [HackController::class, 'adminPanel'])->name('adminPanel');
+
+Route::get('/create', [HackController::class, 'create'])->name('create');
+
+Route::post('/send-mail', [MailController::class, 'sendMail'])->name('sendMail');
 
 Route::post('/store', [HackController::class, 'store'])->name('store');
 
