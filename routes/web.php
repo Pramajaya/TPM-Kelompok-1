@@ -23,11 +23,15 @@ Route::get('/', [HackController::class, 'homepage'])->name('homepage');
 
 Route::get('/adminPanel', [HackController::class, 'adminPanel'])->name('adminPanel');
 
-Route::get('/create', [HackController::class, 'create'])->name('create');
+Route::get('/registration', [HackController::class, 'create'])->name('create');
 
 Route::get('/registration', [AuthController::class, 'registration'])->name('registration');
 
-Route::post('/registration', [AuthController::class, 'registration_post'])->name('registration_post');
+Route::post('/registration-post', [AuthController::class, 'registration_post'])->name('registration_post');
+
+Route::get('/loginhack', [AuthController::class, 'loginhack'])->name('loginhack');
+
+Route::post('/loginhack', [AuthController::class, 'loginhackpost'])->name('loginhackpost');
 
 Route::post('/send-mail', [MailController::class, 'sendMail'])->name('sendMail');
 
@@ -51,3 +55,9 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::get('/ascending', [HackController::class, 'ascending'])->name('ascending');
+
+Route::get('/descending', [HackController::class, 'descending'])->name('descending');
+
+Route::get('/search', [HackController::class, 'search'])->name('search');

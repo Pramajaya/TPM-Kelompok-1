@@ -15,12 +15,13 @@
     <!-- Fonts -->
 
     <!-- CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/global.css')}}">
+    <link rel="stylesheet" href="assets/css/global.css">
     <!-- CSS -->
 
 </head>
 
 <body>
+
 
     <!-- Modals & Pop up -->
     <div class="" id="modals">
@@ -456,11 +457,11 @@
         <!-- Footer -->
         <section id="footer" class="relative">
             <div class="grid grid-cols-2">
-                <form action="#" method="POST" class="p-10 flex flex-col justify-center gap-5" id="contact-us">
+                <form action="send-mail" method="POST" class="p-10 flex flex-col justify-center gap-5" id="contact-us">
                     <h1 class="text-4xl text-white uppercase">Contact Us</h1>
                     <div class="flex flex-col gap-1">
-                        <label class="text-white font-semibold" for="nama">Nama:</label>
-                        <input type="text" class="input" id="nama" name="nama" placeholder="Nama" required>
+                        <label class="text-white font-semibold" for="sender">Nama:</label>
+                        <input type="text" class="input" id="nama" name="sender" placeholder="Nama" required >
                     </div>
                     <div class="flex flex-col gap-1">
                         <label class="text-white font-semibold" for="email">Email:</label>
@@ -543,7 +544,7 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <!-- IonIcon -->
 
-    <script src="{{asset('assets/js/script.js')}}"></script>
+    <script src="assets/js/script.js"></script>
     <!-- JS -->
 </body>
 

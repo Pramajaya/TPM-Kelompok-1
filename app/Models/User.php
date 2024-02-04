@@ -31,6 +31,10 @@ class User extends Authenticatable
         return $this->belongsTo(Identity::class, 'identity_id');
     }
 
+    public function hacks(): HasOne{
+        return $this->hasOne(Hack::class);
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

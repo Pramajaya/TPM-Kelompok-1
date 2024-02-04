@@ -15,10 +15,19 @@ class Hack extends Model
         'nomor_whatsapp',
         'id_line',
         'id_github',
-        'tempat_lahir',
+        'birthplace_id',
         'tanggal_lahir_ketua',
         'cv',
-        'id_card'
+        'id_card',
+        'user_id'
     ];
+
+    public function birthplaces(){
+        return $this->belongsTo(Birthplace::class, 'birthplace_id');
+    }
+
+    public function users(): BelongsTo{
+        return $this->belongsTo(User::class);
+    }
 
 }

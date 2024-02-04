@@ -5,20 +5,27 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Identity;
 use Illuminate\Http\Request;
+use App\Models\Birthplace;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
     function registration(){
         $identity = Identity::all();
-        return view('registerData2', compact('identity'));
+        $birthplaces = Birthplace::all();
+        return view('registerData2', compact('identity'), compact('birthplaces'));
+    }
+
+    function loginhack(){
+        return view('loginhack');
     }
 
     function registration_post(Request $request){
         $request->validate([
             'username' => 'required|string|unique:users',
             'password' => ['required', 'min:8', 'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w])).+$/'],
-
+            'identity_id' => 'required'
         ]);
 
 
@@ -37,5 +44,19 @@ class AuthController extends Controller
         */
 
         return redirect(route('dashboard'))->with('success', 'Registered Successfully!');
+    }
+
+    function loginhackpost(Request $request){
+        $credentials = [
+            'username' => $request->username,
+            'password' => $request->password
+
+        ];
+
+        if(Auth::attemt($credentials)){
+            return redirect('/dashboard')->with('success', "Login success");
+        }
+
+        return back()->with('error', 'Login unsuccessful');
     }
 }

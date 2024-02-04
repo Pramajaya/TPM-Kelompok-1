@@ -22,5 +22,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             IdentitySeeder::class
         ]);
+
+        $this->call([
+            BirthplaceSeeder::class
+        ]);
     }
 }
